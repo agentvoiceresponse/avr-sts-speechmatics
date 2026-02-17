@@ -1,7 +1,7 @@
 /**
  * index.js
  * Entry point for the Speechmatics Speech-to-Speech streaming WebSocket server.
- * This server handles real-time audio streaming between clients and Speechmatics's API,
+ * This server handles real-time audio streaming between clients and the Speechmatics API,
  * performing necessary audio format conversions and WebSocket communication.
  *
  * Client Protocol:
@@ -16,7 +16,7 @@
 
 const WebSocket = require("ws");
 const { createSpeechmaticsJWT } = require("@speechmatics/auth");
-const { FlowClient, AgentAudioEvent } = require("@speechmatics/flow-client");
+const { FlowClient } = require("@speechmatics/flow-client");
 
 require("dotenv").config();
 
@@ -49,7 +49,7 @@ async function createSpeechmaticsJwt() {
 }
 
 /**
- * Handles incoming client WebSocket connection and manages communication with Speechmatics's API.
+ * Handles incoming client WebSocket connection and manages communication with the Speechmatics API.
  * Implements buffering for audio chunks received before WebSocket connection is established.
  *
  * @param {WebSocket} clientWs - Client WebSocket connection
@@ -141,7 +141,7 @@ const handleClientConnection = (clientWs) => {
   
     const base64 = buffer.toString('base64');
   
-    // invio a avr-core
+    // Send audio back to avr-core
     clientWs.send(JSON.stringify({
       type: "audio",
       audio: base64
