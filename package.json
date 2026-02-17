@@ -3,6 +3,16 @@
   "version": "1.2.1",
   "author": "Agent Voice Response <info@agentvoiceresponse.com>",
   "description": "Speechmatics Speech-to-Speech service for Agent Voice Response",
+  "keywords": [
+    "agent-voice-response",
+    "avr",
+    "speechmatics",
+    "speech-to-speech",
+    "websocket",
+    "realtime-audio",
+    "telephony",
+    "nodejs"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "node .",

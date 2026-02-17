@@ -60,6 +60,13 @@ npm start
 - Output audio sent to AVR: base64-encoded PCM s16le, 8 kHz
 - Frame pacing: 20 ms frames (`160` samples at `8000` Hz)
 
+## Compatibility
+
+- Input codec: `pcm_s16le`
+- Output codec: `pcm_s16le`
+- Sample rate: `8000` Hz
+- Recommended with AVR call paths using `alaw`, `ulaw`, or `slin16` transcoding as configured in `avr-core`
+
 ## Client message protocol
 
 Incoming messages from AVR:
